@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Card, CardContent, CardHeader } from "../components/ui/card";
-import { Slider } from "../components/ui/slider";
-import { Badge } from "../components/ui/badge";
-import { Button } from "../components/ui/button";
+import { Card, CardContent, CardHeader } from "../../components/ui/card";
+import { Slider } from "../../components/ui/slider";
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
 import { BarLoader } from "react-spinners";
 // Define the student type
 
@@ -69,6 +69,9 @@ export default function StudentVotingPanel() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <h1 className="text-3xl font-bold mb-8 text-center">
+        Student Voting Panel
+      </h1>
       {loader && (
         <div className="flex flex-col justify-center items-center">
           <BarLoader />
@@ -79,16 +82,16 @@ export default function StudentVotingPanel() {
         students.map((student) => (
           <Card key={student.id} className="overflow-hidden">
             <CardHeader className="p-0">
-              {
-                student.photo && <div className="relative h-80 w-full">
-                <Image
-                  src={student.photo || "/next.svg"}
-                  alt={`Photo of ${student.name}`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              }
+              {student.photo && (
+                <div className="relative h-80 w-full">
+                  <Image
+                    src={student.photo || "/next.svg"}
+                    alt={`Photo of ${student.name}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
             </CardHeader>
             <CardContent className="p-6">
               <h2 className="text-xl font-bold ">{student.name}</h2>

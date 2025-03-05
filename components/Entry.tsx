@@ -26,7 +26,7 @@ export function Entry() {
       .then(() => {
         localStorage.setItem("faculty", name1);
       })
-      .then(() => window.location.reload());
+      .then(() => window.location.href = "/soty");
   };
   return (
     <div className="h-screen w-screen pt-24 max-w-md mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
