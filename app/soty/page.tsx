@@ -116,7 +116,12 @@ export default function StudentVotingPanel() {
                     <button
                       className="p-4"
                       onClick={() => {
-                        setVote(vote - 1);
+                        if(vote > 0){
+                          setVote(vote - 1);
+                        }
+                        else{
+                          setVote(vote)
+                        }
                       }}
                     >
                       -
@@ -134,7 +139,12 @@ export default function StudentVotingPanel() {
                     <button
                       className="p-4"
                       onClick={() => {
-                        setVote(vote + 1);
+                        if(vote < 10){
+                          setVote(vote + 1);
+                        }
+                        else{
+                          setVote(vote)
+                        }
                       }}
                     >
                       +
